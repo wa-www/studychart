@@ -1,4 +1,4 @@
-@extents('layouts.application')
+@extends('layouts.application')
 
 @section('header')
 トップページの背景
