@@ -5,22 +5,22 @@
 @endsection
 
 @section('content')
-  <form action="studies" mathod="post">
-    {{csrf_field()}}
+  <form action="/studies" method="post">
+    @csrf
 
     <div class="form-group">
       <label for="inputAddress">勉強日時</label>
-      <input class="form-control" type="text" placeholder="Readonly input here..." readonly>
+      <input class="form-control" type="text" value="6月22日" readonly>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="field">分野</label>
-        <input class="form-control" type="text" placeholder="Default input" id="field">
+        <input class="form-control" type="text" placeholder="Default input" id="field" name="field">
       </div>
       <div class="form-group col-md-3">
-        <label for="studytime">時間</label>
-        <select id="studytime" class="form-control">
+        <label for="studyhour">時間</label>
+        <select id="studyhour" class="form-control" name="hour">
           <option selected>Choose...</option>
           <option>1</option>
           <option>2</option>
@@ -28,8 +28,8 @@
         </select>
       </div>
       <div class="form-group col-md-3">
-        <label for="studytime">分</label>
-        <select id="studytime" class="form-control">
+        <label for="studyminit">分</label>
+        <select id="studyminit" class="form-control" name="minute">
           <option selected>Choose...</option>
           <option>00</option>
           <option>30</option>
@@ -39,13 +39,15 @@
 
     <div class="form-group">
       <label for="exampleFormControlTextarea1">詳細</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
     </div>
     <div class="form-group">
       <label for="exampleFormControlFile1">添付</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
     </div>
-    <button type="submit" class="btn btn-primary">登録</button>
+    <div>
+      <button type="submit" class="btn btn-primary">登録</button>
+    </div>
 
   </form>
 

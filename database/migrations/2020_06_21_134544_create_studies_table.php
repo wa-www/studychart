@@ -17,9 +17,10 @@ class CreateStudiesTable extends Migration
             $table->increments('id');
             $table->dateTime('date');
             $table->string('field');
-            $table->time('time');
+            $table->integer('hour');
+            $table->integer('minute');
             $table->text('content');
-            $table->string('image_path');
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }

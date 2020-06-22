@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Study;
+use Carbon\Carbon;
 
 class StudiesController extends Controller
 {
@@ -15,7 +16,8 @@ class StudiesController extends Controller
     public function index()
     {
         //
-        return view('studies.index');
+        $studies=Study::all();
+        return view('studies.index', ['studies'=>$studies]);
     }
 
     /**
@@ -39,12 +41,16 @@ class StudiesController extends Controller
     {
         //
         $study = new Study;
-        $study->date=$study->created_at;
+        // dd($request);
+        $now = Carbon::now();
+        $study->date=$now;
         $study->field=$request->field;
-        $study->time=$request->time;
+        $study->hour=$request->hour;
+        $study->minute=$request->minute;
         $study->content=$request->content;
 
         $study->save();
+        return redirect('/studies');
     }
 
     /**
