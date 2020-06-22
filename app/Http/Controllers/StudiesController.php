@@ -25,6 +25,7 @@ class StudiesController extends Controller
     public function create()
     {
         //
+        return view('studies.create');
     }
 
     /**

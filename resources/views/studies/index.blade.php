@@ -1,5 +1,9 @@
 @extends('layouts.application')
 
+@section('title')
+投稿一覧   
+@endsection
+
 @section('header')
 トップページの背景
 @endsection
