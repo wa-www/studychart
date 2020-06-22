@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Study;
 
 class StudiesController extends Controller
 {
@@ -37,6 +38,13 @@ class StudiesController extends Controller
     public function store(Request $request)
     {
         //
+        $study = new Study;
+        $study->date=$study->created_at;
+        $study->field=$request->field;
+        $study->time=$request->time;
+        $study->content=$request->content;
+
+        $study->save();
     }
 
     /**
