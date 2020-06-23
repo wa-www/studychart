@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <form action="/studies" method="post">
+  <form action="/studies" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">
@@ -43,7 +43,7 @@
     </div>
     <div class="form-group">
       <label for="exampleFormControlFile1">添付</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
+      <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image_path">
     </div>
     <div>
       <button type="submit" class="btn btn-primary">登録</button>

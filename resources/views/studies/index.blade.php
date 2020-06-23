@@ -59,9 +59,12 @@
         <h5 class="card-title">{{$study->field}}</h5>
         <p class="card-text">{{$study->hour}}時間{{$study->minute}}分</p>
         <p class="card-text">{{$study->content}}</p>
+        <p class="card-text"><small class="text-muted">投稿者：{{$study->user->name}}</small></p>
         {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
       </div>
-      <img src="..." class="card-img-top" alt="...">
+      {{-- @if($study->image_url!=null) --}}
+        <img src="/storage/images/{{$study->image_path}}" class="card-img-top" name="image_path" width="100px" height="80px" alt="...">
+      {{-- @endif --}}
     </div>
   @endforeach
 

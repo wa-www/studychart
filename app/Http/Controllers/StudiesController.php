@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Study;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 class StudiesController extends Controller
@@ -48,7 +49,11 @@ class StudiesController extends Controller
         $study->hour=$request->hour;
         $study->minute=$request->minute;
         $study->content=$request->content;
-
+        $study->user_id=Auth::id();
+        if($request->image_path){
+            $path = $request->file('image_path')->store('public/images');
+            $study->image_path = basename($path);
+        }
         $study->save();
         return redirect('/studies');
     }

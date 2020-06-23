@@ -21,6 +21,7 @@ class CreateStudiesTable extends Migration
             $table->integer('minute');
             $table->text('content');
             $table->string('image_path')->nullable();
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
