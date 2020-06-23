@@ -12,7 +12,16 @@
 <header>@yield('header')</header>
 
 <body>
-  @yield('content')
+  <div class="container">
+    <div class="row">
+
+      <div class="aside-menu col-4">
+        @yield('aside')
+      </div>
+
+      <div class="aside-menu col-8">
+        @yield('content')
+      </div>
 </body>
 
 <footer>@yield('footer')</footer>
