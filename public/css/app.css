@@ -7,6 +7,31 @@
   height: 400px;
 }
 
+footer {
+  width: 100%;
+}
+
+aside {
+  float: left;
+  width: 500px;
+}
+
+body {
+  color: #6c757d;
+}
+
+.aside-menu {
+  color: #6c757d;
+  width: 500px;
+  float: left;
+}
+
+.card-content {
+  color: #6c757d;
+  width: 500px;
+  float: right;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
