@@ -45,6 +45,21 @@
   <div class="bk"></div>
 @endsection
 
+
+@section('aside')
+アサイド
+  <div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action active">
+      マイページ
+    </button>
+    <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+    <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+    <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+    <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+  </div>
+@endsection
+
+
 @section('content')
 内容
   @foreach($studies as $study)
@@ -53,7 +68,7 @@
   @endforeach
 
   @foreach($studies as $study)
-    <div class="card">
+    {{-- <div class="card card-content"> --}}
       <div class="card-body">
         <p class="card-text"><small class="text-muted">{{$study->date}}</small></p>
         <h5 class="card-title">{{$study->field}}</h5>
@@ -63,13 +78,19 @@
         {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
       </div>
       {{-- @if($study->image_url!=null) --}}
-        <img src="/storage/images/{{$study->image_path}}" class="card-img-top" name="image_path" width="100px" height="80px" alt="...">
+        <img src="/storage/images/{{$study->image_path}}" class="card-img-top" name="image_path" width="100px" height="300px" alt="...">
       {{-- @endif --}}
-    </div>
+    {{-- </div> --}}
   @endforeach
 
 @endsection
 
 @section('footer')
 フッター
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h6 class="display-4">Fluid jumbotron</h6>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
 @endsection
