@@ -87,7 +87,7 @@
 
 @section('footer')
 フッター
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron-fluid">
   <div class="container">
     <h6 class="display-4">Fluid jumbotron</h6>
     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
